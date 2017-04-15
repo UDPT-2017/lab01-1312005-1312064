@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>thong tin tai khoan</title>
+  </head>
+  <body>
+    <table width="500" border="1">
+      <tr>
+        <td>
+          id
+        </td>
+        <td>
+          hoten
+        </td>
+        <td>
+          username
+        </td>
+        <td>
+          password
+        </td>
+        <td>
+          <a href="./thongtin/them">them</a>
+        </td>
+      </tr>
+      <% danhsach.rows.forEach(function(tk){%>
+
+      <tr>
+        <td>
+          id
+        </td>
+        <td>
+        <%= tk.id %>
+        </td>
+        <td>
+          <%= tk.hoten %>
+        </td>
+        <td>
+        <%= tk.username %>
+        </td>
+        <td>
+        <%= tk.password %>
+        </td>
+        <td>
+        <%= tk.email %>
+        </td>
+        <td>
+          <a href="./thongtin/sua">sua-xoa</a>
+        </td>
+      </tr>
+    <%})%>
+    </table>
+    <h1>thong tin tai khoan</h1>
+  </body>
+</html>
