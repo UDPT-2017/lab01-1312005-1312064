@@ -52,7 +52,7 @@ app.get("/thongtin",function(req,res){
 app.get("/taikhoan/dangki",function(req,res){
   res.render("dangki.ejs");
 });
-app.post("/taikhoan/dangki",urlencodedParser,function(req,res){
+app.post("taikhoan/dangki",urlencodedParser,function(req,res){
   pool.connect(function(err, client, done) {
     if(err) {
       return console.error('error fetching client from pool', err);
@@ -73,8 +73,18 @@ app.post("/taikhoan/dangki",urlencodedParser,function(req,res){
         return console.error('error running query', err);
       }
       // console.log(result.rows[0].hoten);
-        res.send("Đăng kí thành công");
+        res.send("main.ejs");
       //output: 1
     });
   });
 });
+app.get("/album",function(req,res){
+  res.render("album.ejs");
+})
+app.get("/blog",function(req,res){
+  res.render("blog.ejs");
+})
+
+app.get("/about",function(req,res){
+  res.render("about.ejs");
+})
